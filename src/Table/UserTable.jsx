@@ -27,7 +27,8 @@ export default function UserTable() {
  const handleSubmit=async(e)=>{
   e.preventDefault()
   try {
-      const updateUser=await axios.put(`http://localhost:5000/api/update/${updateid}`,value)
+      // const updateUser=await axios.put(`http://localhost:5000/api/update/${updateid}`,value)
+      const updateUser=await axios.put(`https://depresion-1.onrender.com/api/update/${updateid}`,value)
       const response=updateUser.data
       console.log(response);
       
@@ -52,7 +53,8 @@ export default function UserTable() {
 
   const handleDelete=async()=>{
     try {
-      const deleteUser=await axios.delete(`http://localhost:5000/api/delete/${deleteid}`)
+      // const deleteUser=await axios.delete(`http://localhost:5000/api/delete/${deleteid}`)
+      const deleteUser=await axios.delete(`https://depresion-1.onrender.com/api/delete/${deleteid}`)
       const response=deleteUser.data
       if (response.success) {
         toast.success(response.Massage)
